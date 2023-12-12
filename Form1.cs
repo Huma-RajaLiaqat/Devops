@@ -34,7 +34,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Student')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Student')";
             ExecuteQueryAndDisplayResults(query);
             alumni.Visible = false;
             teachers.Visible = false;
@@ -49,7 +49,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Alumni')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Alumni')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             teachers.Visible = false;
@@ -63,7 +63,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Teacher')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Teacher')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             alumni.Visible = false;
@@ -77,7 +77,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Antwerpen')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Antwerpen')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             alumni.Visible = false;
@@ -92,7 +92,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Oost-Vlaanderen')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Oost-Vlaanderen')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             alumni.Visible = false;
@@ -106,7 +106,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'West-Vlaanderen')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'West-Vlaanderen')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             alumni.Visible = false;
@@ -120,7 +120,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Limburg')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Limburg')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             alumni.Visible = false;
@@ -134,7 +134,7 @@ namespace Devops_Security_CaseStudy4
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Vlaams-Brabant')";
+            string query = "SELECT voornaam, achternaam,number FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Vlaams-Brabant')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             alumni.Visible = false;
