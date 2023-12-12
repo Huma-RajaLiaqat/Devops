@@ -19,4 +19,8 @@ jobs:
       run: nuget restore
     - name: Build
       run: msbuild /p:Configuration=Release /p:TargetFramework=net472
-
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Release-Artifacts
+        path: bin/Release  # Adjust the path based on your project structure
