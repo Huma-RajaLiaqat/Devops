@@ -34,32 +34,117 @@ namespace Devops_Security_CaseStudy4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam, email FROM student WHERE status IN (SELECT statusId FROM status WHERE status = 'Student')";
+            string query = "SELECT voornaam, achternaam FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Student')";
             ExecuteQueryAndDisplayResults(query);
             alumni.Visible = false;
             teachers.Visible = false;
             students.Visible = true;
-            
+            antwerpen.Visible = false;
+            westvlaanderen.Visible = false;
+            oostvlaanderen.Visible=false;
+            limburg.Visible = false;
+            vlaamsbrabant.Visible = false;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam, email FROM student WHERE status IN (SELECT statusId FROM status WHERE status = 'Alumni')";
+            string query = "SELECT voornaam, achternaam FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Alumni')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             teachers.Visible = false;
             alumni.Visible = true;
+            antwerpen.Visible = false;
+            westvlaanderen.Visible = false;
+            oostvlaanderen.Visible = false;
+            limburg.Visible = false;
+            vlaamsbrabant.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string query = "SELECT voornaam, achternaam, email FROM teacher WHERE status IN (SELECT statusId FROM status WHERE status = 'Teacher')";
+            string query = "SELECT voornaam, achternaam FROM members WHERE status IN (SELECT statusId FROM status WHERE status = 'Teacher')";
             ExecuteQueryAndDisplayResults(query);
             students.Visible = false;
             alumni.Visible = false;
             teachers.Visible = true;
+            antwerpen.Visible = false;
+            westvlaanderen.Visible = false;
+            oostvlaanderen.Visible = false;
+            limburg.Visible = false;
+            vlaamsbrabant.Visible = false;
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Antwerpen')";
+            ExecuteQueryAndDisplayResults(query);
+            students.Visible = false;
+            alumni.Visible = false;
+            teachers.Visible = false;
+            antwerpen.Visible = true;
+            westvlaanderen.Visible = false;
+            oostvlaanderen.Visible = false;
+            limburg.Visible = false;
+            vlaamsbrabant.Visible = false;
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Oost-Vlaanderen')";
+            ExecuteQueryAndDisplayResults(query);
+            students.Visible = false;
+            alumni.Visible = false;
+            teachers.Visible = false;
+            antwerpen.Visible = false;
+            westvlaanderen.Visible = false;
+            oostvlaanderen.Visible = true;
+            limburg.Visible = false;
+            vlaamsbrabant.Visible = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'West-Vlaanderen')";
+            ExecuteQueryAndDisplayResults(query);
+            students.Visible = false;
+            alumni.Visible = false;
+            teachers.Visible = false;
+            antwerpen.Visible = false;
+            westvlaanderen.Visible = true;
+            oostvlaanderen.Visible = false;
+            limburg.Visible = false;
+            vlaamsbrabant.Visible = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Limburg')";
+            ExecuteQueryAndDisplayResults(query);
+            students.Visible = false;
+            alumni.Visible = false;
+            teachers.Visible = false;
+            antwerpen.Visible = false;
+            westvlaanderen.Visible = false;
+            oostvlaanderen.Visible = false;
+            limburg.Visible = true;
+            vlaamsbrabant.Visible = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT voornaam, achternaam FROM members WHERE provincie IN (SELECT provincieId FROM provincie WHERE provincie = 'Vlaams-Brabant')";
+            ExecuteQueryAndDisplayResults(query);
+            students.Visible = false;
+            alumni.Visible = false;
+            teachers.Visible = false;
+            antwerpen.Visible = false;
+            westvlaanderen.Visible = false;
+            oostvlaanderen.Visible = false;
+            limburg.Visible = false;
+            vlaamsbrabant.Visible = true;
+        }
         private DataTable ConvertToDataTable(IEnumerable<dynamic> data)
         {
             DataTable table = new DataTable();
