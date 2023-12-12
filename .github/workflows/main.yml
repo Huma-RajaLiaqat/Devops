@@ -19,10 +19,6 @@ jobs:
         dotnet --version
     - name: Restore dependencies
       run: nuget restore
-    - name: Setup Visual Studio Build Tools
-      uses: actions/setup-vs-build-tools@v2
-      with:
-        visualstudio-version: '2019'
     - name: Build
       run: msbuild /p:Configuration=Release
     - name: Test
