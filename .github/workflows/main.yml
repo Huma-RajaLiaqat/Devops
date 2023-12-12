@@ -1,0 +1,26 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest  # Use a Windows runner for .NET Framework
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+    - name: Restore dependencies
+      run: nuget restore
+    - name: Build
+      run: msbuild /p:Configuration=Release /p:TargetFramework=net472
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Release-Artifacts
+        path: bin/Debug
