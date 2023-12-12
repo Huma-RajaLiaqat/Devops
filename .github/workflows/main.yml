@@ -13,13 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Framework
-      run: |
-        choco install dotnet-framework-sdk -y --version=4.7.2
-        dotnet --version
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
     - name: Restore dependencies
       run: nuget restore
     - name: Build
-      run: msbuild /p:Configuration=Release
+      run: |
+        msbuild /p:Configuration=Release
     - name: Test
       run: echo "No tests specified for .NET Framework"
