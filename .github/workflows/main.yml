@@ -23,4 +23,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Release-Artifacts
-        path: bin/Release  # Adjust the path based on your project structure
+        path: bin/Debug/Devops&Security-CaseStudy4.exe
