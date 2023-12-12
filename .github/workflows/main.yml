@@ -19,6 +19,7 @@ jobs:
       run: nuget restore
     - name: Build
       run: |
-        msbuild /p:Configuration=Release
+        msbuild /p:Configuration=Release Devops&Security-CaseStudy4.sln
+
     - name: Test
       run: echo "No tests specified for .NET Framework"
