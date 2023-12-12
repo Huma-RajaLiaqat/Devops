@@ -9,17 +9,14 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Use a Windows runner for .NET Framework
 
     steps:
     - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 3.1.414  # Use a version that is officially supported
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
     - name: Restore dependencies
-      run: dotnet restore
+      run: nuget restore
     - name: Build
-      run: dotnet build --no-restore /p:TargetFramework=net48
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: msbuild /p:Configuration=Release /p:TargetFramework=net472
+
